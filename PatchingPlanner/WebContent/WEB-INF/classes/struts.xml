@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" 
+   "http://struts.apache.org/dtds/struts-2.0.dtd"> 
+   <struts>
+   <constant name="struts.devMode" value="true"></constant>
+   		<package name="dafault" extends="struts-default">
+   			
+   			<action name="login"
+  			 class="com.patchingplanner.action.LoginAction" >
+  				 <result name="SUCCESS">welcome.jsp</result>
+  				 <result name="input">Login.jsp</result>
+  				 <result name="ERROR">Login.jsp</result>
+  			 </action>
+   			
+   			  <action name="register">
+  				 <result type="redirect">Register.jsp</result>
+  			 </action>
+  			
+  			 <action name="newuser"
+  			 class="com.patchingplanner.action.RegisterAction" >
+  				 <result name="success">Login.jsp</result>
+  				 <result name="input">Login.jsp</result>
+  				 <result name="error">Register.jsp</result>
+  			 </action>
+  			 
+  			   <action name="server">
+  				 <result type="redirect">options.jsp</result>
+  			 	</action>
+  			 
+  			  <action name="select"
+  			 	class ="com.patchingplanner.action.ServerAction" method="execute">
+  			 <result name="success">server.jsp</result>	
+  			 <result name ="error">welcome.jsp</result> 	
+  			 </action>
+  			 
+   		</package>
+   </struts>

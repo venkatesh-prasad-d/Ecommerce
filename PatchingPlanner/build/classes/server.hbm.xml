@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD//EN" 
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+ <hibernate-mapping package="com.patchinplanner.bean">
+ 	<class name="ServerBean" table="patching_planner">
+ 	<id name="name" type="string" column="name"></id>
+ 	<property name="ip_address" type="string" column="ip_address"></property>
+ 	<property name="type" type="string" column="type"/>
+ 	<property name="environment" type="string" column="environment"/> 
+ 	<property name="category" type="string" column="category"></property>
+ 	
+ 	</class>
+ 
+ 
+ </hibernate-mapping>
