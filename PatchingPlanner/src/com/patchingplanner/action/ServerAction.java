@@ -24,6 +24,7 @@ public class ServerAction {
 	} 
 	
 	public String execute(){
+		
 		arraBean = server.getServer(sb);
 		
 		return "success";

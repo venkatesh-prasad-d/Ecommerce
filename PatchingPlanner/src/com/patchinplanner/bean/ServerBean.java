@@ -6,6 +6,7 @@ public class ServerBean {
 	private String type;
 	private String environment;
 	private String  category;
+	
 	public String getName() {
 		return name;
 	}
@@ -36,5 +37,5 @@ public class ServerBean {
 	public void setCategory(String category) {
 		this.category = category;
 	}
-
+	
 }

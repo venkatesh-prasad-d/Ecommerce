@@ -8,20 +8,11 @@
 </head>
 <body>
 <%@ taglib uri="/struts-tags" prefix="s" %>
-<s:form action="ilm_server">
-	<p>List ILM Servers <s:submit value="Show servers" ></s:submit></p> 
-</s:form>
-
-<s:form action="sm_server">
-	<p>List SiteMinder Servers <s:submit value="Show servers" ></s:submit></p> 
-</s:form>
-
-<s:form action="vp_server">
-	<p>List Vendor Portal Servers <s:submit value="Show servers" ></s:submit></p> 
-</s:form>
-
 <s:form action="server">
 	<p>List Servers <s:submit value="Show servers" ></s:submit></p> 
+</s:form>
+<s:form action="scheduleredirect">
+	<p>Schedule Patching <s:submit value="start" ></s:submit></p> 
 </s:form>
 
 </body>

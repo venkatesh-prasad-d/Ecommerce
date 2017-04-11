@@ -19,7 +19,8 @@
 	</s:form>
 	
 	<s:form action="search">
-		<s:textarea></s:textarea>
+		<s:textarea label = "Enter The Servers to Search" name="serverlist" cols="16" rows="15"></s:textarea>
+		<s:submit></s:submit>
 	</s:form>
 
 </body>
