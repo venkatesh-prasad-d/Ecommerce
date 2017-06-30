@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD//EN" 
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+ 
+ <hibernate-mapping package="com.StatusReportingTool.Bean">
+ 	
+ 	<class name="ReleaseBean" table="release_table">
+		<id name="id" type="int" column="id"></id>
+ 		<property name="releaseID" type="int" column="release_id"/>
+ 		<property name="fnfID" column="fnf_id" type="string"></property>
+ 		<property name="resourceID" column="emp_id" type="string"></property>
+ 		<property name="item" column="item" type="string"></property>
+ 		<property name="analysisDesign" column="analysis_design" type="string"></property>
+ 		<property name="dev" column="dev" type="string"></property>
+ 		<property name="test" column="test" type="string"></property>
+ 		<property name="cab" column="cab" type="string"></property>
+ 		<property name="supporting" column="status" type="string"></property>
+ 		
+ 	
+ 	</class>
+ 
+ </hibernate-mapping>

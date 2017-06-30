@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD//EN" 
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+ 
+ <hibernate-mapping package="com.StatusReportingTool.Bean">
+ 	
+ 	<class name="FixesBean" table="fixes_table">
+		<id name="fnfId" type="string" column="fnf_id"></id>
+ 		<property name="item" type="string" column="item"/>
+ 		<property name="description" column="description" type="string"></property>
+ 		<property name="requestor" column="requestor" type="string"></property>
+ 		<property name="impact" column="impact" type="string"></property>
+ 		<property name="note" column="note" type="string"></property>
+ 		<property name="status" column="status" type="string"></property>
+ 	
+ 	</class>
+ 
+ </hibernate-mapping>

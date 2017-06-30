@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD//EN" 
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+ 
+ <hibernate-mapping package="com.StatusReportingTool.Bean">
+ 	
+ 	<class name="ReportBean" table="emp_data">
+		<id name="id" type="int" column="id"></id>
+ 		<property name="emp_id" type="string" column="emp_id"/>
+ 		<property name="emp_name" column="emp_name" type="string"/>
+ 		<property name="sDate" column="startDate" type="timestamp"></property>
+ 		<property name="eDate" column="endDate" type="timestamp"></property>
+ 		<property name="file" column="txtFile" type="blob"></property>
+ 	
+ 	</class>
+ 
+ </hibernate-mapping>

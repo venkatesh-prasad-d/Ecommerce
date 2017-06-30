@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" 
+   "http://struts.apache.org/dtds/struts-2.0.dtd"> 
+   <struts>
+   <constant name="struts.devMode" value="true"></constant>
+   		<package name="dafault" extends="struts-default">
+   		
+   			<action name="login"
+  				 class="com.StatusReportingTool.Action.LoginAction" method="login">
+  					 <result name="SUCCESS">welcome.jsp</result>
+  				 	<result name="input">Login.jsp</result>
+  				 	<result name="ERROR">Login.jsp</result>
+  		 	</action>
+   			
+   			<action name="register">
+  				 <result type="redirect">Register.jsp</result>
+  			</action>
+  			 
+  			 <action name="newuser"
+  				 class="com.StatusReportingTool.Action.RegisterAction" >
+  					 <result name="success">Login.jsp</result>
+  				 	<result name="input">Register.jsp</result>
+  					 <result name="error">Register.jsp</result>
+  			 </action>
+  			 
+  			 <action name="addReport">
+  				 <result type="redirect">NewReport.jsp</result>
+  			 </action>
+  			 
+  			  <action name="newReport"
+  			 	class="com.StatusReportingTool.Action.ReportAction" >
+  				 	<result name="success">welcome.jsp</result>
+  				 	<result name="input">NewReport.jsp</result>
+  				 	<result name="error">NewReport.jsp</result>
+  			 </action>
+  			 
+  			 <action name="FixesAction"
+  			 		class="com.StatusReportingTool.Action.FixesAction">
+  				 	<result name="success">TestResults.jsp</result>
+  				  	<result name="ERROR">Login.jsp</result>
+  			 </action>
+  			 
+  			 <action name="addRelease"
+  			 		class="com.StatusReportingTool.Action.ReleaseAction" method="addRelease">
+  				 	<result name="success">TestResults.jsp</result>
+  				  	<result name="ERROR">Login.jsp</result>
+  			 </action>
+  			 
+  			 
+  			 <action name="viewReportDates"
+  				 class="com.StatusReportingTool.Action.ReportDateAction">
+  				 	<result name="success">DateSelection.jsp</result>
+  				  	<result name="ERROR">Login.jsp</result>
+  			 </action>
+  			 
+  			 <action name="ViewReport"
+  			 		class="com.StatusReportingTool.Action.ViewReportAction">
+  				 	<result name="success">ViewReport.jsp</result>
+  				  	<result name="ERROR">Login.jsp</result>
+  			 </action>
+  			 
+  			 
+   			 <action name="logout"
+  		       class="com.StatusReportingTool.Action.LogoutAction" method="logout">
+  		       <result name="success">Login.jsp</result>       
+  		      </action>
+  			 
+  			 <action name="Home">
+  				 <result type="redirect">welcome.jsp</result>
+  			 </action> 		
+  			 
+   		</package>
+   </struts>
