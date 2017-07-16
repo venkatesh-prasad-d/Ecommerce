@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD//EN" 
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+ <hibernate-mapping package="com.nephrology.bean">
+ 	<class name="SearchOGBean" table="dialysisresults">
+ 	 	<id name="id" column="id" type="int"></id>
+ 	 	<property name="patientId" column="patientid" type="string"></property>
+ 	 	<property name="machineId" column="machine_id" type="string"></property>
+ 	 	<property name="T1" column="T1" type="int"></property>
+ 	 	<property name="T2" column="T2" type="int"></property>
+ 	 	<property name="T3" column="T3" type="int"></property>
+ 	 	<property name="T4" column="T4" type="int"></property>
+ 	 	<property name="T5" column="T5" type="int"></property>
+ 	 	<property name="bflow" column="bflow" type="int"></property>
+ 	 	<property name="arterialpressure" column="arterialpressure" type="int"></property>
+ 	 	<property name="bolus" column="bolus" type="int"></property>
+ 	 	<property name="status" column="status" type="string"></property>
+ 	 	<property name="sqlDate" column="date" type="timestamp"></property>
+ 	</class>
+ 
+ </hibernate-mapping>

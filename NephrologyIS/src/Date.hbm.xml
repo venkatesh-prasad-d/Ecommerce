@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD//EN" 
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+ <hibernate-mapping package="com.nephrology.bean">
+ 	<class name="DateBean" table="dialysisdate">
+ 		<id name="id" column="id" type="int"></id>
+ 		<property name="date" column="Date" type="timestamp"></property>
+ 		<property name="patientid" column="patientid" type="string"></property>
+ 		<property name="doc_id" column="doc_id" type="string"></property>
+ 		<property name="patientName" column="patientname" type="string"></property>
+ 		<property name="docName" column="docname" type="string"></property>
+ 		
+ 	</class>
+ </hibernate-mapping>

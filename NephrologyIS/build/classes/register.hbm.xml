@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD//EN" 
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+ <hibernate-mapping package="com.nephrology.bean">
+ 	<class name="RegisterBean" table="docuser">
+ 	 	<id name="docId" column="doc_id" type="int"></id>
+ 	 	<property name="email" column="email" type="string"></property>
+ 	 	<property name="username" column="username" type="string"></property>
+ 	 	<property name="password" column="password" type="string"></property>
+ 	 	<property name="docName" column="Name" type="string"></property>
+ 	</class>
+ 
+ </hibernate-mapping>
