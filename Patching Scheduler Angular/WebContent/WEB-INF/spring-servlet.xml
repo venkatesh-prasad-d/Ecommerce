@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xmlns:p="http://www.springframework.org/schema/p"  
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xmlns:context="http://www.springframework.org/schema/context"  
+    xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans  
+	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd  
+	http://www.springframework.org/schema/context  
+	http://www.springframework.org/schema/context/spring-context-4.0.xsd
+	http://www.springframework.org/schema/mvc
+    http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+	http://www.springframework.org/schema/tx
+	http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+	 
+	
+	   <mvc:annotation-driven></mvc:annotation-driven>
+    <mvc:resources mapping="/img/**" location="/img/"/>
+ 
+    <context:component-scan  base-package="com.patchingscheduler.controller" /> 
+    
+    <tx:annotation-driven transaction-manager="hibernateTransactionManager"/>
+
+ 
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">  
+        <property name="prefix" value="/WEB-INF/JSP/" />  
+        <property name="suffix" value=".jsp" />  
+    </bean> 
+    
+	<bean class="org.springframework.jdbc.datasource.DriverManagerDataSource" id="dataSource">
+		 <property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+		 <property name="url" value="jdbc:mysql://localhost/patching_planner"></property>
+		 <property name="username" value="root"></property>
+		 <property name="password" value="root"></property>
+	</bean>
+	
+	<bean class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean" id="sessionFactory">
+	 <property name="dataSource" ref="dataSource"></property>
+	 
+	 <property name="hibernateProperties">
+			 <props>
+				  <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				  <prop key="hibernate.show_sql">true</prop>
+				  <prop key="hibernate.hbm2ddl.auto">update  </prop>    
+			 </props>
+	 </property>
+	 
+	 <property name="annotatedClasses">
+		  <list>
+		   <value>com.patchingscheduler.model.ServerBean</value>
+		    <value>com.patchingscheduler.model.DateBean</value>
+		  </list>
+	 </property>
+	 
+	</bean>
+	
+	  <bean class="org.springframework.orm.hibernate3.HibernateTransactionManager" id="hibernateTransactionManager">
+	 	<property name="sessionFactory" ref="sessionFactory"></property>
+	  </bean>
+	  
+	  <bean id="scheduleDAO" class="com.patchingscheduler.DAO.ScheduleDAO"></bean>
+	  <bean id="patching" class="com.patchingscheduler.utilities.PatchingUtilities"></bean>
+      <bean id="scheduleServers" class="com.patchingscheduler.utilities.ScheduleServers"></bean>
+	  <bean id="utilityBean" class="com.patchingscheduler.model.UtilityBean"></bean>
+	  <bean id="serverUtilities" class="com.patchingscheduler.utilities.ServerSeperation"></bean>
+	  <bean id="dateDAO" class="com.patchingscheduler.DAO.DateDAO"></bean>
+</beans>  
